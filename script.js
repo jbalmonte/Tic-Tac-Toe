@@ -1,15 +1,15 @@
-let isXIcon = true;
-let playerMoves = [];
-let botMoves = [];
+let isXIcon = true
+let p1Moves = []
+let p2Moves = []
 let player1Score = document.querySelector('#player1Score');
 let player2Score = document.querySelector('#player2Score');
 let player1ResultLabel = document.querySelector('#player-1-result-label')
 let player2ResultLabel = document.querySelector('#player-2-result-label')
 let player1ResultImage = document.querySelector('#player-1-result-image')
 let player2ResultImage = document.querySelector('#player-2-result-image')
-var status="";
-let pCounter = 0;
-let bCounter = 0;
+let status
+let pCounter = 0
+let bCounter = 0
 
 const PATTERNS = [123, 456, 789, 147, 258, 369, 159, 357]
 
@@ -18,25 +18,25 @@ const PATTERNS = [123, 456, 789, 147, 258, 369, 159, 357]
 function setMark(cellId) {
     let tableData = document.getElementById(cellId);
 
-    if (!(playerMoves.includes(cellId)) && !(botMoves.includes(cellId))) {
+    if (!(p1Moves.includes(cellId)) && !(p2Moves.includes(cellId))) {
         let icon = isMyTurn();
-        (~icon.indexOf('x')) ? playerMoves.push(cellId) : botMoves.push(cellId);
+        (~icon.indexOf('x')) ? p1Moves.push(cellId) : p2Moves.push(cellId);
         tableData.style.background = `url(images/${icon}) no-repeat center center`; //set the icon when the table data is clicked
     }
 
 
-    if (playerMoves.length >= 3||botMoves.length >= 3) {
+    if (p1Moves.length >= 3||p2Moves.length >= 3) {
      
         setTimeout(() => {
-            getStatus('player 1', playerMoves)
+            getStatus('player 1', p1Moves)
         }, 200);
 
         setTimeout(() => {
-            getStatus('player 2', botMoves)
+            getStatus('player 2', p2Moves)
         }, 200);
 
 
-        if((playerMoves.length+botMoves.length)===9){
+        if((p1Moves.length+p2Moves.length)===9){
             setTimeout(() => {
                 getStatus('draw', null)
             }, 200); 
@@ -130,9 +130,8 @@ function reset() {
         tdElements[element].style.background = 'none'
 
     isXIcon = true
-    playerMoves = []
-    botMoves = []
-
+    p1Moves = []
+    p2Moves = []
     player1ResultImage.src="images/x-icon.png"
     player2ResultImage.src="images/o-icon.png"
     player1ResultLabel.innerHTML=""

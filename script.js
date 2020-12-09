@@ -20,8 +20,8 @@ function setMark(cellId) {
 
     if (!(playerMoves.includes(cellId)) && !(botMoves.includes(cellId))) {
         let icon = isMyTurn();
-        (icon[0] === 'x') ? playerMoves.push(cellId) : botMoves.push(cellId);
-        tableData.style.background = `url(${icon}) no-repeat center center`; //set the icon when the table data is clicked
+        (~icon.indexOf('x')) ? playerMoves.push(cellId) : botMoves.push(cellId);
+        tableData.style.background = `url(images/${icon}) no-repeat center center`; //set the icon when the table data is clicked
     }
 
 
@@ -68,10 +68,10 @@ function getStatus(role, context) {
             if (role === 'player 1') {
                 player1Score.innerHTML = (pCounter += 1)
                 player1ResultLabel.innerHTML = "WON"
-                player1ResultImage.src = "win.png"
+                player1ResultImage.src = "images/win.png"
 
                 player2ResultLabel.innerHTML = "LOSE"
-                player2ResultImage.src = "lose.png"
+                player2ResultImage.src = "images/lose.png"
                 player2ResultImage.setAttribute('style', 'font-size: 4em; margin-top: 0; margin-bottom:.25em;')
 
             }
@@ -79,11 +79,11 @@ function getStatus(role, context) {
             else if (role === 'player 2') {
                 player2Score.innerHTML = (bCounter += 1)
                 player2ResultLabel.innerHTML = "WON"
-                player2ResultImage.src = "win.png"
+                player2ResultImage.src = "images/win.png"
                 player2ResultImage.setAttribute('style', 'font-size: 4em; margin-top: 0; margin-bottom:.25em;')
 
                 player1ResultLabel.innerHTML = "LOSE"
-                player1ResultImage.src = "lose.png"
+                player1ResultImage.src = "images/lose.png"
     
                    
             }
@@ -100,11 +100,11 @@ function getStatus(role, context) {
  
     if(status!='won'&&role==='draw' ){    
         player2ResultLabel.innerHTML = "DRAW"
-        player2ResultImage.src = "draw.png"
+        player2ResultImage.src = "images/draw.png"
         player2ResultImage.setAttribute('style', 'font-size: 4em; margin-top: 0; margin-bottom:.25em;')
 
         player1ResultLabel.innerHTML = "DRAW"
-        player1ResultImage.src = "draw.png"
+        player1ResultImage.src = "images/draw.png"
 
         setTimeout(() => {
             alert(`DRAW!`)
@@ -133,8 +133,8 @@ function reset() {
     playerMoves = []
     botMoves = []
 
-    player1ResultImage.src="x-icon.png"
-    player2ResultImage.src="o-icon.png"
+    player1ResultImage.src="images/x-icon.png"
+    player2ResultImage.src="images/o-icon.png"
     player1ResultLabel.innerHTML=""
     player2ResultLabel.innerHTML=""
     status=""

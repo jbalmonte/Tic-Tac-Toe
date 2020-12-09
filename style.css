@@ -1,0 +1,46 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.main{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 13%;
+}
+
+.main>div{
+    text-align: center;
+}
+
+.game-table{
+    margin-top: -10%;
+}
+
+.score-board{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 17%;
+    padding: .2em;
+    text-align: center;
+    border:5px solid rgb(163, 47, 163);
+}
+
+.label{ font-size: 1.7em; margin-left: -5%;}
+
+#player1Score, #player2Score{ font-size: 1.7em!important;}
+
+table{
+    border-collapse: collapse;
+    margin-top: .8em;
+}
+
+td{
+    border: 5px solid rgb(163, 47, 163);
+    padding: 5em;
+}
+
+.game-table h1{
+    font-size: 3.5em;
+}

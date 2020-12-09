@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Balmonte Tic Tac Toe</title>
+</head>
+<body>
+
+    
+    <div class="score-board">
+        <h3>Scoreboard</h3>
+        <span class="label">Player 1=</span> 
+        <span id="player1Score">0</span><br>
+        <span class="label">Player 2=</span> 
+        <span id="player2Score">0</span>
+        
+    </div>
+    
+    <div class="main">
+        <div class="player-1">
+            <h1>PLAYER 1</h1>
+            <img src="player-1.png" alt="Player 1">
+          
+            <p id="player-1-result-label" style="font-size: 4em;"></p>
+            <img id="player-1-result-image" src="x-icon.png" alt="">
+            </div>
+        
+        <div class="game-table">
+            <h1>TIC TAC TOE</h1>
+            <table>
+                <tr id="r1">
+                    <td id="1" onclick="setMark(this.id)"></td>
+                    <td id="2" onclick="setMark(this.id)"></td>
+                    <td id="3" onclick="setMark(this.id)"></td>
+                </tr>
+                <tr id="r2">
+                    <td id="4" onclick="setMark(this.id)"></td>
+                    <td id="5" onclick="setMark(this.id)"></td>
+                    <td id="6" onclick="setMark(this.id)"></td>
+                </tr>
+                <tr id="r3">
+                    <td id="7" onclick="setMark(this.id)"></td>
+                    <td id="8" onclick="setMark(this.id)"></td>
+                    <td id="9" onclick="setMark(this.id)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="player-2">
+            <h1>PLAYER 2</h1>
+            <img src="player-2.png" alt="Player 2" width="256" height="256">
+            <p id="player-2-result-label" style="font-size: 4em;"></p>
+            <img id="player-2-result-image" src="o-icon.png" alt="">
+                
+            
+        </div>
+        
+        
+    </div>
+
+  
+    <script src="script.js"></script>
+</body>
+</html>

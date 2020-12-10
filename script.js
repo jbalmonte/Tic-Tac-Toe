@@ -25,8 +25,8 @@ function setMark(cellId) {
     }
 
 
-    if (p1Moves.length >= 3||p2Moves.length >= 3) {
-     
+    if (p1Moves.length >= 3 || p2Moves.length >= 3) {
+
         setTimeout(() => {
             getStatus('player 1', p1Moves)
         }, 200);
@@ -36,14 +36,14 @@ function setMark(cellId) {
         }, 200);
 
 
-        if((p1Moves.length+p2Moves.length)===9){
+        if ((p1Moves.length + p2Moves.length) === 9) {
             setTimeout(() => {
                 getStatus('draw', null)
-            }, 200); 
+            }, 200);
 
-            }
         }
-        
+    }
+
 }
 
 function isMyTurn() {
@@ -63,7 +63,7 @@ function getStatus(role, context) {
 
     PATTERNS.map(pattern => {
         if (checkPattern(context, pattern)) {
-            this.status='won';
+            this.status = 'won';
             console.log(status);
             if (role === 'player 1') {
                 player1Score.innerHTML = (pCounter += 1)
@@ -84,21 +84,21 @@ function getStatus(role, context) {
 
                 player1ResultLabel.innerHTML = "LOSE"
                 player1ResultImage.src = "images/lose.png"
-    
-                   
+
+
             }
-  
+
             setTimeout(() => {
                 alert(`${role.toUpperCase()} ${status}!`)
                 reset()
             }, 100);
 
-            
+
         }
     })
 
- 
-    if(status!='won'&&role==='draw' ){    
+
+    if (status != 'won' && role === 'draw') {
         player2ResultLabel.innerHTML = "DRAW"
         player2ResultImage.src = "images/draw.png"
         player2ResultImage.setAttribute('style', 'font-size: 4em; margin-top: 0; margin-bottom:.25em;')
@@ -111,13 +111,13 @@ function getStatus(role, context) {
             reset()
         }, 100);
 
-}
+    }
 
 }
 
 
 function checkPattern(list, num) {
-    if(list===null) return;
+    if (list === null) return;
     let result = list.toString().match(new RegExp(`[${num}]`, 'g'))
     return (result !== null && result.length === 3) ? true : false
 }
@@ -132,10 +132,10 @@ function reset() {
     isXIcon = true
     p1Moves = []
     p2Moves = []
-    player1ResultImage.src="images/x-icon.png"
-    player2ResultImage.src="images/o-icon.png"
-    player1ResultLabel.innerHTML=""
-    player2ResultLabel.innerHTML=""
-    status=""
+    player1ResultImage.src = "images/x-icon.png"
+    player2ResultImage.src = "images/o-icon.png"
+    player1ResultLabel.innerHTML = ""
+    player2ResultLabel.innerHTML = ""
+    status = ""
 }
 

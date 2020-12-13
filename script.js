@@ -7,7 +7,7 @@ let player1ResultLabel = document.querySelector('#player-1-result-label')
 let player2ResultLabel = document.querySelector('#player-2-result-label')
 let player1ResultImage = document.querySelector('#player-1-result-image')
 let player2ResultImage = document.querySelector('#player-2-result-image')
-let status
+let status=''
 let pCounter = 0
 let bCounter = 0
 
@@ -63,7 +63,7 @@ function getStatus(role, context) {
 
     PATTERNS.map(pattern => {
         if (checkPattern(context, pattern)) {
-            this.status = 'won';
+            status = 'won';
             console.log(status);
             if (role === 'player 1') {
                 player1Score.innerHTML = (pCounter += 1)
